@@ -20,3 +20,38 @@ They will be removed later as the project is refined.
 	box-sizing: border-box;
 }
 
+html {
+  height: 100vh;
+  margin: 0;
+}
+
+
+body {
+  margin: 0 auto; 
+  padding: 0 1rem; 
+  max-width: 1200px; 
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  overflow-x: hidden; 
+  box-sizing: border-box; 
+  background-color: set.$color-body;
+  background-image: url('/assets/design/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  }
+
+body.december {
+  background-color: set.$color-bodyDecember;
+  background-image: url('/assets/design/backgroundDecember.png');
+}
+
+body.christmas {
+  background-image: url('/assets/design/backgroundChristmas.png');
+}
+
+
