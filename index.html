@@ -17,10 +17,145 @@
   <title>Kitty donut city</title>
 
 
+ <!-- Google Fonts for text -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Emilys+Candy&family=Fuzzy+Bubbles:wght@400;700&family=Handlee&family=Just+Me+Again+Down+Here&family=Mogra&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rasa:ital,wght@0,300..700;1,300..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Rubik+Bubbles&family=Rubik+Dirt&family=Rubik+Gemstones&display=swap" rel="stylesheet">
+
+<!-- Google Fonts for Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css" type="text/css">
+  
+
+  
 </head>
 <body>
-  <
+  <section class="header__section">
+    <article class="banner__container">
+      <h2 class="visually-hidden">Beställningsinformation</h2>
+      <p>💳 Fakturabetalning möjlig upp till 800 kr</p>
+      <p>🚚 Fri frakt vid köp av 15 produkter</p>
+    </article>   
+
+    <header class="header">
+      <nav>
+        <a href="#top" aria-label="Gå till toppen av sidan">
+          <img src="" alt="">
+        </a>
+      </nav>
+      
+      <h1 class="header__title">Kitty donut city</h1>
+
+      <div class="header__cart">
+        <button class="header__cart-button" id="showCart" aria-label="Visa kundkorg">
+          <span class="material-symbols-rounded" aria-hidden="true">shopping_cart</span>
+          <span class="header__cart-amount" id="headerCartAmount" aria-live="polite">0</span>
+        </button>
+      </div>
+    </header>  
+
+    <article class="banner__container">
+      <h2 class="visually-hidden">Leveranstid och rabattinformation</h2>
+      <ul class="banner__item" id="bannerDetails">
+        <li class="banner--delivery-time">Leveranstiden är just nu <span id="deliveryTimeBanner">x</span>.</li>
+        <li class="banner--lucia">🌟 Glad Lucia! En gåva med varje beställning idag.</li>
+        <li class="banner--monday">📅 Måndagsrabatt! 10% på alla produkter före 10:00.</li>
+        <li class="banner--unevenTuesday">🎉 Tisdagsrabatt! 10% på köp över 25 kr - endast idag!</li>
+      </ul>
+    </article>
+  </section>
+
+  <div class="font-demo">
+    <h1 class="delicious-handrawn">Delicious Handrawn Font</h1>
+    <h2 class="emilys-candy">Emilys Candy Font</h2>
+    <h3 class="fuzzy-bubbles">Fuzzy Bubbles Font</h3>
+    <p class="handlee">Handlee Font</p>
+    <span class="just-me-again">Just Me Again Down Here Font</span>
+    <div class="mogra">Mogra Font</div>
+    <h4 class="montserrat">Montserrat Font</h4>
+    <p class="rasa">Rasa Font</p>
+    <p class="red-hat-display">Red Hat Display Font</p>
+    <h1 class="rubik-bubbles">Rubik Bubbles Font</h1>
+    <p class="rubik-dirt">Rubik Dirt Font</p>
+    <div class="rubik-gemstones">Rubik Gemstones Font</div>
+  </div>
+  <div class="font-tries">
+    <h1 class="delicious-handrawn">Delicious Handrawn Font</h1>
+    <h2 class="emilys-candy">Emilys Candy Font</h2>
+    <h3 class="fuzzy-bubbles">Fuzzy Bubbles Font</h3>
+    <p class="handlee">Handlee Font</p>
+    <span class="just-me-again">Just Me Again Down Here Font</span>
+    <div class="mogra">Mogra Font</div>
+    <h4 class="montserrat">Montserrat Font</h4>
+    <p class="rasa">Rasa Font</p>
+    <p class="red-hat-display">Red Hat Display Font</p>
+    <h1 class="rubik-bubbles">Rubik Bubbles Font</h1>
+    <p class="rubik-dirt">Rubik Dirt Font</p>
+    <div class="rubik-gemstones">Rubik Gemstones Font</div>
+  </div>
+    
+  <div class="icon-demo">
+    <span class="material-symbols-rounded">add</span>
+    <span class="material-symbols-rounded">arrow_upward</span>
+    <span class="material-symbols-rounded">arrows_more_up</span>
+    <span class="material-symbols-rounded">check</span>
+    <span class="material-symbols-rounded">chevron_left</span>
+    <span class="material-symbols-rounded">chevron_right</span>
+    <span class="material-symbols-rounded">close</span>
+    <span class="material-symbols-rounded">credit_card</span>
+    <span class="material-symbols-rounded">description</span>
+    <span class="material-symbols-rounded">keyboard_arrow_left</span>
+    <span class="material-symbols-rounded">keyboard_arrow_right</span>
+    <span class="material-symbols-rounded">local_mall</span>
+    <span class="material-symbols-rounded">mail</span>
+    <span class="material-symbols-rounded">remove</span>
+    <span class="material-symbols-rounded">sell</span>
+    <span class="material-symbols-rounded">shopping_cart</span>
+    <span class="material-symbols-rounded">sort_by_alpha</span>
+    <span class="material-symbols-rounded">star</span>
+  </div>
+  
+  
+  <section id="korallrod-ljus" class="box korallrod-ljus">
+    <h2>Heading</h2>
+  </section>
+  
+  <section id="blagron-mild" class="box blagron-mild">
+    <h2>Heading</h2>
+  </section>
+  
+  <section id="blagron-pastell" class="box blagron-pastell">
+    <h2>Heading</h2>
+  </section>
+  
+  <section id="gron-pastell-ljus" class="box gron-pastell-ljus">
+    <h2>Heading</h2>
+  </section>
+  
+  <section id="grabla-ljus" class="box grabla-ljus">
+    <h2>Heading</h2>
+  </section>
+  
+  <section id="blagron-ljus" class="box blagron-ljus">
+    <h2>Heading</h2>
+  </section>
+  
+  <section id="gul-vanilj-ljus" class="box gul-vanilj-ljus">
+    <h2>Heading</h2>
+  </section>
+  
+  <section id="gul-citron-ljus" class="box gul-citron-ljus">
+    <h2>Heading</h2>
+  </section>
+  
+  <section id="gul-citron-mild" class="box gul-citron-mild">
+    <h2>Heading</h2>
+  </section>
+  
+  <section id="gul-senap-ljus" class="box gul-senap-ljus">
+    <h2>Heading</h2>
+  </section>
 
   <script type="module" src="/js/script.mjs"></script>
 </body>

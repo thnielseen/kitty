@@ -5,3 +5,4 @@ A collection of reusable mixins for the project, including spacing, responsive f
 
 /* Importing existing functions to incorporate them in the declaration of reusable mixins. */
 @use 'functions' as func;
+@use 'variables' as var;
