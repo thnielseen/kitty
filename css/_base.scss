@@ -1,0 +1,22 @@
+
+/* ---------------------------------------------------------------------------------------------------------------------------
+                                            ~~~ BASE ~~~
+Foundational global styles for the project, independent of media queries or device-specific styles.
+----------------------------------------------------------------------------------------------------------------------------*/
+
+/* Importing functions, variables, and mixins from styleSet to use for global styling */
+@use 'utilities/styleSet' as set;
+
+/* ---------------------------------------------------------------------------------------------------------------------------
+                                             ~~~ TEMPORARY STYLES ~~~
+These styles are temporary and used for testing the layout before finalizing the design and naming conventions.
+They will be removed later as the project is refined.
+----------------------------------------------------------------------------------------------------------------------------*/
+
+/* GLOBAL STYLES */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+

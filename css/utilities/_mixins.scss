@@ -1,0 +1,7 @@
+/* ---------------------------------------------------------------------------------------------------------------------------
+                                            ~~~ MIXINS ~~~
+A collection of reusable mixins for the project, including spacing, responsive font sizing, and hidden elements.
+----------------------------------------------------------------------------------------------------------------------------*/
+
+/* Importing existing functions to incorporate them in the declaration of reusable mixins. */
+@use 'functions' as func;

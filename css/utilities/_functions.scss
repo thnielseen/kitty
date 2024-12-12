@@ -1,0 +1,12 @@
+/* -----------------------------------------------------------
+                ~~~  FUNCTIONS   ~~~
+A collection of reusable functions for the project.
+----------------------------------------------------------- */
+
+// Include the Sass math library for calculations
+@use 'sass:math'; 
+
+// Function to convert pixel values to rem, assuming 1rem = 16px
+@function rem($px) {
+    @return math.div($px, 16) * 1rem;  
+}
