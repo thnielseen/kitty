@@ -9,12 +9,16 @@
                                             ~~~ BASE ~~~
 Foundational global styles for the project, independent of media queries or device-specific styles.
 ---------------------------------------------------------------------------------------------------------------------------- */
+.visually-hidden{
+  @include set.visually-hidden;
+}
 
 /* Importing functions, variables, and mixins from styleSet to use for global styling */
 
 html {
   height: 100%;
 }
+
 
 /**
  * Att kolla för responsiv design - flytta till medias
@@ -84,218 +88,304 @@ body {
   }
 }
 
-.display{
-  background-color: #e6ffe6; // Ljus pastellgul
-}
+/* -------------------------------------------------------------------------------------------------------------
+                                            ~~~ GEMENSAMMA STILAR ~~~
+------------------------------------------------------------------------------------------------------------- */
+.product {
+  background-color: #f9f9f9; /* Vit bakgrund */
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
-/**
-.cart {
-  padding: 10px;
-  background-color: #fff5f5;
-
-  &__container {
+  &__image-content {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 
-  &__button__container {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
+    .product__figure {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-    .cart__button-small {
-      background-color: #f9e2e2;
-      border: none;
-      padding: 5px 10px;
-      cursor: pointer;
-
-      &--showCart {
-        background-color: #e6b5b5;
-      }
-
-      &--erase {
-        background-color: #ffcccc;
+      img {
+        max-width: 100%;
+        max-height: 300px;
+        object-fit: contain;
       }
     }
   }
 
-  &__title {
-    font-size: 1.5rem;
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      font-size: 1.2rem;
+      margin: 0;
+    }
+
+    span {
+      font-weight: bold;
+      color: #333;
+    }
+  }
+
+  &__amount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    .product__button {
+      background-color: #ddd;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      border-radius: 4px;
+
+      &--increase {
+        background-color: #aaffaa;
+      }
+
+      &--decrease {
+        background-color: #ffaaaa;
+      }
+
+      &--reset {
+        background-color: #ff5555;
+        color: #fff;
+      }
+    }
+
+    .product__quantity {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__total-price {
+    text-align: center;
     font-weight: bold;
-    color: #5e3737;
-    margin-bottom: 10px;
+  }
+}
+
+/* -------------------------------------------------------------------------------------------------------------
+                                            ~~~ DISPLAY PRODUKTER ~~~
+------------------------------------------------------------------------------------------------------------- */
+.display {
+  background-color: #e6ffe6; // Ljus pastellgrön
+  padding: 2rem;
+
+  &__title {
+    color: set.$color-gray;
+    font-size: 54px;
+    font-family: set.$font-verdana;
+    padding: set.rem(25);
+    align-self: center;
+    
+  }
+
+  &__controls {
+    background-color: set.$color-white;
+    display: flex;
+    align-items: center;
+    padding: 1rem 1rem 1rem 4rem;
+    gap: 25rem;
+
+    .controls__sort-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .controls__sort-button {
+      height: 35px;
+      width: 35px;
+      padding: 0;
+      background-color: transparent;
+      cursor: pointer;
+
+      .controls__sort-icon {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
   }
 
   &__products {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-
-    .product {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      padding: 10px;
-      background-color: #a9cec0;
-      border-radius: 5px;
-
-      &__image {
-        max-width: 100px;
-        border-radius: 5px;
-      }
-
-      &__info {
-        display: flex;
-        justify-content: space-between;
-        background-color: #eeeeee;
-        padding: 10px;
-
-        &__name {
-          font-size: 1.2rem;
-          font-weight: bold;
-          background-color: #d9f7d9;
-          padding: 5px;
-        }
-
-        &__price {
-          background-color: #ffe6e6;
-          padding: 5px;
-          font-size: 1rem;
-        }
-      }
-
-      &__amount {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #ffcccc;
-        padding: 10px;
-
-        .product__button {
-          background-color: #fff;
-          border: none;
-          cursor: pointer;
-          font-size: 1.2rem;
-          padding: 5px 10px;
-          border-radius: 5px;
-
-          &--decrease {
-            background-color: #ffaaaa;
-          }
-
-          &--increase {
-            background-color: #aaffaa;
-          }
-
-          &--reset {
-            background-color: #ff5555;
-            color: white;
-          }
-        }
-
-        .product__quantity {
-          font-size: 1.2rem;
-          font-weight: bold;
-        }
-      }
-
-      &__total-price {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        background-color: #e6ccff;
-
-        &-value {
-          font-weight: bold;
-          color: #5e3737;
-        }
-      }
-    }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    max-width: 1600px;
+    margin: 0 auto;
   }
 
-  &__order__details {
-    padding: 10px;
-    background-color: #f9e2e2;
+  .product {
+    max-width: 400px; /* Begränsa bredd */
+    margin: 0 auto;
 
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
+    &__bulk-price {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
     }
+  }
+}
 
-    &-container {
+/* -------------------------------------------------------------------------------------------------------------
+                                            ~~~ CART PRODUKTER ~~~
+------------------------------------------------------------------------------------------------------------- */
+.cart {
+  background-color: #f9e2e2; // Ljus pastellröd
+  padding: 2rem;
+
+  &__products {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    .product__container {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
+      align-items: center;
+      gap: 1rem;
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 
-      p {
-        display: flex;
-        justify-content: space-between;
-        font-size: 1rem;
-
-        h4 {
-          font-size: 1.2rem;
-          font-weight: bold;
-        }
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
       }
-    }
 
-    .cart__button__container {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
-
-      .cart__button {
-        background-color: #e6b5b5;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-
-        &--showCart {
-          background-color: #f9d5d5;
-        }
-
-        &#toCheckout {
-          background-color: #ff9999;
-          color: white;
-        }
+      .product__info {
+        flex: 1;
       }
     }
   }
 }
-*/
+
+.ratingIcon {
+  width: 40px;
+  height: 40px;
+}
 
 
+/* -------------------------------------------------------------------------------------------------------------
+                                            ~~~ ORDER SECTION ~~~
+------------------------------------------------------------------------------------------------------------- */
 .order {
-  padding: 10px;
   background-color: #f5e6ff; // Ljus lila
+  padding: 10px;
 
+  /* -------------------------------------- ORDER SUMMARY -------------------------------------- */
   &__summary {
-    padding: 10px;
     background-color: #e6ccff; // Ljus lavendel
+    padding: 2rem;
+    border-radius: 8px;
+
+    h3 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .order-summary__products {
+      display: grid;
+      grid-template-columns: 1fr; // Staplar produkter vertikalt
+      gap: 1rem;
+
+      .product__container {
+        display: flex; // Lägg allt i rad
+        align-items: center; // Centrera innehållet vertikalt
+        gap: 1rem; // Mellanrum mellan bild, detaljer och totalpris
+        padding: 1rem;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+        .product__image {
+          width: 100px; // Begränsa bildens storlek
+          height: 100px;
+          object-fit: cover; // Behåll proportioner
+          border-radius: 4px;
+        }
+
+        .product__details {
+          display: flex; // Gör detaljerna till en flexcontainer
+          flex-direction: column; // Huvudlayout i kolumn
+          gap: 0.5rem; // Mellanrum mellan rader
+
+          .product__name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 0;
+          }
+
+          .product__info-row {
+            display: flex; // Placera kvantitet och pris på samma rad
+            gap: 1rem; // Mellanrum mellan kvantitet och pris
+
+            .product__quantity,
+            .product__price {
+              font-size: 1rem;
+              color: #555;
+              margin: 0;
+
+              span {
+                font-weight: bold;
+                color: #333;
+              }
+            }
+          }
+        }
+
+        .product__total {
+          font-weight: bold;
+          font-size: 1.2rem;
+          color: #333;
+          white-space: nowrap; // Hindrar radbrytning
+        }
+      }
+    }
   }
 
+  /* -------------------------------------- ORDER CHECKOUT -------------------------------------- */
   &__checkout {
     padding: 10px;
     background-color: #f5ccff; // Ljus lila-rosa
+    border-radius: 8px;
 
     &__customerInfo {
       padding: 10px;
       background-color: #e0b3ff; // Pastell lila
+      border-radius: 8px;
     }
 
     &__payment {
       padding: 10px;
       background-color: #f2b3e6; // Rosa pastell
+      border-radius: 8px;
     }
 
     &__confirmation {
       padding: 10px;
-      background-color: #bdd9c8; // Rosa pastell
+      background-color: #bdd9c8; // Grön pastell
+      border-radius: 8px;
     }
   }
 }
+
+
 
 .timer__warning {
   padding: 10px;
@@ -435,7 +525,4 @@ h1{
 }
 
 
-img {
-  max-width: 100px;
-  height: auto;
-}
+

@@ -1,4 +1,6 @@
-import { generateRatingIcons, calcPrice} from "../script.mjs";
+import {generateRatingIcons} from "/js/modules/displayFunctions.mjs";
+import {calcPrice} from "/js/modules/utilityFunctions/calcFunctions.mjs"
+
 
 
 /**
@@ -28,7 +30,7 @@ import { generateRatingIcons, calcPrice} from "../script.mjs";
  * @returns {void} - This function does not return anything but modifies the DOM.
  */
 const printDisplayProducts = (products) => {
-  const productDisplay = document.getElementById("productDisplay"); // Uppdaterat ID
+  const productDisplay = document.getElementById("displayProducts"); // Uppdaterat ID
 
   if (!productDisplay) {
     console.error("Element with ID 'productDisplay' not found.");
@@ -46,7 +48,7 @@ const printDisplayProducts = (products) => {
     productArticle.classList.add("product");
 
     productArticle.innerHTML = `
-      <div class="product__image-container">
+      <div class="product__image-content">
         <button
           class="product__switchButton"
           data-direction="left"

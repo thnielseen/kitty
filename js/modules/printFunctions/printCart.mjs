@@ -1,4 +1,4 @@
-import { generateRatingIcons, calcPrice} from "../script.mjs";
+import {calcPrice} from "/js/modules/utilityFunctions/calcFunctions.mjs"
 
 /**
  * Renders the cart products in HTML with detailed pricing calculations.

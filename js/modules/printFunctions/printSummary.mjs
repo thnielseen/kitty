@@ -1,4 +1,4 @@
-import { generateRatingIcons, calcPrice} from "../script.mjs";
+import {calcPrice} from "/js/modules/utilityFunctions/calcFunctions.mjs"
 
 const printSummary = (products) => {
   const orderSummary = document.getElementById("orderSummary");
@@ -30,20 +30,25 @@ const printSummary = (products) => {
     summaryList.classList.add("order-summary__product");
 
     summaryList.innerHTML = `
-      <article class="checkout__product__container" data-id="${product.id}">
+      <article class="product__container" data-id="${product.id}">
         <img 
-          class="order-summary__product__image"
+          class="product__image"
           data-index="${index}"
           src="${product.firstImage.src}"
           alt="${product.firstImage.alt}"
           loading="lazy">
-        <div class="order-summary__details">
-          <h3 class="order-summary__name">${product.name}</h3>
-          <p class="order-summary__quantity"><span>${product.amount ?? 0}</span> styck</p>
-          <p class="order-summary__price">á <span>${price}</span> kr</p>        
-          <p class="order-summary__total"><span>${totalPrice}</span> kr</p>
+
+        <div class="product__details">
+          <h3 class="product__name">${product.name}</h3>
+          <div class="product__info-row">
+            <p class="product__quantity"><span>${product.amount ?? 0}</span> styck</p>
+            <p class="product__price">á <span>${price}</span> kr</p>
+          </div>
         </div>
+
+        <p class="product__total"><span>${totalPrice}</span> kr</p>
       </article>
+
     `;
 
     // Lägg till produkten i orderSummary

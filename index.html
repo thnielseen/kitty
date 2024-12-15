@@ -85,11 +85,11 @@
     </section>
   
     <section class="display" id="display">
-      <h2 class="productDisplay__title">Fritjofs munkar</h2>
+      <h2 class="productDisplay__title">Kitty donuts</h2>
           
       <nav class="display__controls">
         <label class="controls__categories">
-          Välj kategori
+          Välj en kategori
           <select class="controls__categories__filter-select" 
             id="filterCategories">
             <option value="all" selected>
@@ -107,7 +107,7 @@
           </select>
         </label>
         <div class="controls__sort-buttons" 
-          id="sort-controls" 
+          id="sortingButtons" 
           role="group" 
           aria-labelledby="sort-controls">
           <button class="controls__sort-button" 
@@ -136,9 +136,10 @@
           </button>
         </div>
       </nav>
+
+      <h3 class="display__categoryheading" id="displayCategoryHeading">Alla</h3>
       
-      <section class="display">
-        <div class="display__products"  id="productDisplay">
+        <div class="display__products"  id="displayProducts">
           <!-- Produkter läggs till här -->
         </div>
       </section>
@@ -194,7 +195,7 @@
               Fortsättt handla
             </button>
             <button class="cart__button" id="toCheckout" aria-label="Gå till kassan">
-              Slutför beställning
+              Till kassan
             </button>
           </div>
         </article>
