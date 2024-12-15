@@ -1,0 +1,19 @@
+/* ---------------------------------------------------------------------------------------------------------------------------
+                                             ~~~ DESKTOP STYLES ~~~
+These styles are applied when the screen width is 1025px or more, typically targeting desktop-sized devices.
+----------------------------------------------------------------------------------------------------------------------------*/
+/* Importing functions, variables, and mixins from styleSet to use for global styling */
+@use 'utilities/styleSet' as set;
+
+/* ---------------------------------------------------------------------------------------------------------------------------
+                                             ~~~ TEMPORARY STYLES ~~~
+These styles are temporary and used for testing the layout before finalizing the design and naming conventions.
+They will be removed later as the project is refined.
+----------------------------------------------------------------------------------------------------------------------------*/
+@media (min-width: 1025px) {
+  /* Apply responsive font size using the responsive-font mixin for desktop view */
+  body {
+    max-width: set.rem(1600); 
+  }
+  
+}

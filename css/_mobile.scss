@@ -1,0 +1,13 @@
+/* ---------------------------------------------------------------------------------------------------------------------------
+                 ~~~ MOBILE ~~~
+Standard styles that change in different media queries for responsive design.
+----------------------------------------------------------------------------------------------------------------------------*/
+
+/* Importing functions, variables, and mixins to incorporate them into the global styling settings. */
+@use 'utilities/styleSet' as set;
+
+/* ---------------------------------------------------------------------------------------------------------------------------
+                                             ~~~ TEMPORARY STYLES ~~~
+These are temporary styles for testing purposes and will be replaced with the finalized project styling later.
+The responsive font sizing mixin is used here to test how the styles react to different screen widths.
+----------------------------------------------------------------------------------------------------------------------------*/
