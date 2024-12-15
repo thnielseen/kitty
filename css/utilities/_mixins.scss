@@ -5,9 +5,7 @@ A collection of reusable mixins for the project, including spacing, responsive f
 
 /* Importing existing functions to incorporate them in the declaration of reusable mixins. */
 @use 'functions' as func;
-<<<<<<< HEAD
-@use 'variables' as var;
-=======
+
 
 /*    ~~~ Mixin for margin- and padding sizes ~~~
 -----------------------------------------------------------
@@ -15,8 +13,8 @@ This mixin applies margin and padding using 'rem' units,
 converted from px using the imported rem() function.
 ---------------------------------------------------------*/
 @mixin spacing-rem($margin: 0, $padding: 0) {
-    margin: func.rem($margin); 
-    padding: func.rem($padding);  
+  margin: func.rem($margin); 
+  padding: func.rem($padding);  
 }
 
 /*    ~~~ Mixin for responsive font sizing ~~~
@@ -26,11 +24,11 @@ It scales between a minimum and maximum size based on viewport width,
 with 2vw scaling per rem.
 -----------------------------------------------------------*/
 @mixin responsive-font($min-size-px, $max-size-px) {
-    font-size: clamp(
-      #{func.rem($min-size-px)},  // Minimum font size in rem
-      calc(1rem + 2vw),  // Scalable font size based on viewport width
-      #{func.rem($max-size-px)}  // Maximum font size in rem
-    );
+  font-size: clamp(
+    #{func.rem($min-size-px)},  // Minimum font size in rem
+    calc(1rem + 2vw),  // Scalable font size based on viewport width
+    #{func.rem($max-size-px)}  // Maximum font size in rem
+  );
 }
 
 /*    ~~~ Mixin with style rules for visually hidden elements ~~~
@@ -38,37 +36,35 @@ with 2vw scaling per rem.
 This mixin hides elements visually but keeps them accessible to screen readers.
 -------------------------------------------------------------------------------*/
 @mixin visually-hidden {
-    position: absolute;  
-    width: 1px;  
-    height: 1px; 
-    padding: 0;  
-    margin: -1px;  // Moves the element out of the layout flow
-    overflow: hidden;  
-    clip: rect(0, 0, 0, 0);  // Hides the content visually
-    border: 0;  
+  position: absolute;  
+  width: 1px;  
+  height: 1px; 
+  padding: 0;  
+  margin: -1px;  // Moves the element out of the layout flow
+  overflow: hidden;  
+  clip: rect(0, 0, 0, 0);  // Hides the content visually
+  border: 0;  
 }
 
 /* Mixin för flex-centrering */
 @mixin center-flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  @mixin section-title($font-family, $font-size, $color) {
-    font-family: $font-family;
-    font-size: $font-size;
-    color: $color;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-  
-  @mixin section-style($bg-color, $padding) {
-    background-color: $bg-color;
-    padding: $padding;
-    border-radius: 8px;
-    margin: 1rem 0;
-  }
-  
->>>>>>> gh-pages
+@mixin section-title($font-family, $font-size, $color) {
+  font-family: $font-family;
+  font-size: $font-size;
+  color: $color;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+@mixin section-style($bg-color, $padding) {
+  background-color: $bg-color;
+  padding: $padding;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
