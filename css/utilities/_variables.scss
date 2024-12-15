@@ -3,6 +3,10 @@
 A collection of reusable variables for the project, including font families, colors, and other design constants.
 --------------------------------------------------------------------------------------------------------------- */
 
+<<<<<<< HEAD
+// Font families
+$font-rubik-bubbles: 'Rubik Bubbles', sans-serif;
+=======
 /* ~~~~~ Font Variables ~~~~~ */
 // Fonts yet to be decided
 $font-roboto-condensed: "Roboto Condensed", sans-serif;
@@ -12,11 +16,20 @@ $font-courier-new: "Courier New", monospace;
 
 
 // Variabler för teckensnittsfamiljer med fallback
+>>>>>>> gh-pages
 $font-handlee: "Handlee", cursive, sans-serif;
 $font-roboto: "Roboto", sans-serif, Arial;
 $font-caveat-brush: "Caveat Brush", cursive, "Comic Sans MS";
 $font-rubik-dirt: "Rubik Dirt", system-ui, serif;
 
+<<<<<<< HEAD
+
+//Colors
+$color-bodyDecember: rgb(247, 246, 198);
+$color-body: rgb(205, 233, 226) ;
+
+$color-darkgray: rgb(58, 57, 57);
+=======
 // Variabler för vikter
 $weight-thin: 100;
 $weight-light: 300;
@@ -47,3 +60,4 @@ $color-mildLemon:rgb(255, 238, 191) ;
 $color-lightLemon:rgb(255, 247, 223);
 
 
+>>>>>>> gh-pages

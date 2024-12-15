@@ -1,0 +1,16 @@
+/* ---------------------------------------------------------------------------------------------------------------------------
+                 ~~~ TABLET ~~~
+Styles specific to media queries for screens with a width of 601px or more.
+----------------------------------------------------------------------------------------------------------------------------*/
+
+/* Importing functions, variables, and mixins to integrate them into the global styles */
+@use 'utilities/styleSet' as set;
+
+/* ---------------------------------------------------------------------------------------------------------------------------
+                                             ~~~ TABLET STYLES ~~~
+These styles are applied when the screen width is 601px or more, typically targeting tablet-sized devices.
+----------------------------------------------------------------------------------------------------------------------------*/
+@media (min-width: 601px) {
+  /* Apply responsive font size using the responsive-font mixin for tablet view */
+
+}
