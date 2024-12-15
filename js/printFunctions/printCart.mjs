@@ -41,35 +41,35 @@ import { generateRatingIcons, calcPrice} from "../script.mjs";
 
     // Create a list item for the product
     const productList = document.createElement("li");
-    productList.classList.add("cart__product");
+    productList.classList.add("product");
 
     // Generate the HTML structure for the product
     productList.innerHTML = `
-      <article class="cart__product__container" data-id="${product.id}">
+      <article class="product__container" data-id="${product.id}">
         <img 
-          class="cart__product__image"
+          class="product__image"
           data-index="${index}"
           src="${product.firstImage.src}"
           alt="${product.firstImage.alt}"
           loading="lazy">
             
-        <div class="cart__product__info">
-          <h2 class="cart__product__name">${product.name}</h2>
-          <span class="cart__product__price">${price} kr</span>
+        <div class="product__info">
+          <h2 class="product__name">${product.name}</h2>
+          <span class="product__price">${price} kr</span>
         </div>
-        <div class="cart__product__amount">
-          <button class="cart__product__button product__button product__button--decrease" data-id="${product.id}" aria-label="Minska antal">
+        <div class="product__amount">
+          <button class="product__button product__button product__button--decrease" data-id="${product.id}" aria-label="Minska antal">
             <span class="material-symbols-rounded" aria-hidden="true">remove</span>
           </button>
-          <p class="cart__product__quantity"><span>${product.amount ?? 0}</span></p>
-          <button class="cart__product__button product__button product__button--increase" data-id="${product.id}" aria-label="Öka antal">
+          <p class="product__quantity"><span>${product.amount ?? 0}</span></p>
+          <button class="product__button product__button product__button--increase" data-id="${product.id}" aria-label="Öka antal">
             <span class="material-symbols-rounded" aria-hidden="true">add</span>
           </button>
         </div>
-        <div class="cart__product__total-price">
-          <p>Total: <span class="cart__product__total-price-value">${totalPrice}</span> kr</p>
+        <div class="product__total-price">
+          <p>Total: <span class="product__total-price-value">${totalPrice}</span> kr</p>
         </div>
-        <button class="cart__product__button product__button product__button--reset" 
+        <button class="product__button product__button product__button--reset" 
           data-id="${product.id}" 
           aria-label="Ta bort produkt">
           <span class="material-symbols-rounded" 

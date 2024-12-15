@@ -46,7 +46,7 @@ const printDisplayProducts = (products) => {
     productArticle.classList.add("product");
 
     productArticle.innerHTML = `
-      <div class="display__product__image-container">
+      <div class="product__image-container">
         <button
           class="product__switchButton"
           data-direction="left"
@@ -54,22 +54,22 @@ const printDisplayProducts = (products) => {
           aria-label="Visa föregående bild av ${product.name}">
           <span class="material-symbols-rounded" aria-hidden="true">chevron_left</span>
         </button>
-        <figure class="display__product__figure" data-image-state="primary">
+        <figure class="product__figure" data-image-state="primary">
           <img
-            class="display__product__image product__image--primary"
+            class="product__image product__image--primary"
             data-index="${index}"
             src="${product.firstImage.src}"
             alt="${product.firstImage.alt}"
             loading="lazy">
           <img
-            class="display__product__image product__image--secondary visually-hidden"
+            class="product__image product__image--secondary visually-hidden"
             data-index="${index}"
             src="${product.secondImage.src}"
             alt="${product.secondImage.alt}"
             loading="lazy">
         </figure>
         <button
-          class="display__product__switchButton"
+          class="product__switchButton"
           data-direction="right"
           data-index="${index}"
           aria-label="Visa nästa bild av ${product.name}">
@@ -77,37 +77,37 @@ const printDisplayProducts = (products) => {
         </button>
       </div>
       <div class="rating-container" id="productRating-${product.id}"></div>
-      <h4 class="display__product__name">${product.name}</h4>
+      <h4 class="product__name">${product.name}</h4>
       <p class="product__description">${product.description}</p>
       <p>
         <span>${price} <span>kr/styck</span></span>
       </p>
-      <div class="display__product__amount">
+      <div class="product__amount">
         <button
           type="button"
-          class="display__product__button product__button product__button--decrease"
+          class="product__button product__button product__button--decrease"
           data-id="${product.id}"
           aria-label="Minska antal av ${product.name} i kundkorgen">
           <span class="material-symbols-rounded" aria-hidden="true">remove</span>
         </button>
-        <p class="display__product__quantity">
+        <p class="product__quantity">
           <span>${product.amount ?? 0}</span>
         </p>
         <button
           type="button"
-          class="display__product__button product__button product__button--increase"
+          class="product__button product__button product__button--increase"
           data-id="${product.id}"
           aria-label="Lägg till en ${product.name} i kundkorgen">
           <span class="material-symbols-rounded" aria-hidden="true">add</span>
         </button>
       </div>
-      <div class="display__product__bulk-price">
+      <div class="product__bulk-price">
         <p>
           Vid köp av tio <span class="bulk-price__name">${product.name}</span>
           <span>${price10p}</span> kr/styck
         </p>
       </div>
-      <div class="display__product__total-price">
+      <div class="product__total-price">
         <p>Totalt: <span class="totalPrice">${totalPrice}</span> kr</p>
       </div>
     `;
