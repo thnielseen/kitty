@@ -1,0 +1,441 @@
+@use 'utilities/styleSet' as set;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* ---------------------------------------------------------------------------------------------------------------------------
+                                            ~~~ BASE ~~~
+Foundational global styles for the project, independent of media queries or device-specific styles.
+---------------------------------------------------------------------------------------------------------------------------- */
+
+/* Importing functions, variables, and mixins from styleSet to use for global styling */
+
+html {
+  height: 100%;
+}
+
+/**
+ * Att kolla för responsiv design - flytta till medias
+
+ 1. Bakgrundsbilderna vid olika datum ... med klasser - js!
+ 2. Vilka variabler och mixins som behövs
+ */
+body {
+  background-color: set.$color-greener; 
+  background-image: url('/assets/design/background.png'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 3rem;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.content{
+  background-color: set.$color-green;
+  border-radius: 8px;
+  position: relative;
+  width: 1600px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.fixed__top-content {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding-top: 2px;
+  border-radius: 2px;
+  background-color: set.$color-green;
+  display: flex;
+  flex-direction: column;
+  
+
+  .banner__container {
+  background-color: set.$color-green;
+      
+
+    
+  }
+
+  .header {
+    position: relative;
+    background-color: set.$color-greenest;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    img{
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+.display{
+  background-color: #e6ffe6; // Ljus pastellgul
+}
+
+/**
+.cart {
+  padding: 10px;
+  background-color: #fff5f5;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__button__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    .cart__button-small {
+      background-color: #f9e2e2;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+
+      &--showCart {
+        background-color: #e6b5b5;
+      }
+
+      &--erase {
+        background-color: #ffcccc;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #5e3737;
+    margin-bottom: 10px;
+  }
+
+  &__products {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .product {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+      background-color: #a9cec0;
+      border-radius: 5px;
+
+      &__image {
+        max-width: 100px;
+        border-radius: 5px;
+      }
+
+      &__info {
+        display: flex;
+        justify-content: space-between;
+        background-color: #eeeeee;
+        padding: 10px;
+
+        &__name {
+          font-size: 1.2rem;
+          font-weight: bold;
+          background-color: #d9f7d9;
+          padding: 5px;
+        }
+
+        &__price {
+          background-color: #ffe6e6;
+          padding: 5px;
+          font-size: 1rem;
+        }
+      }
+
+      &__amount {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #ffcccc;
+        padding: 10px;
+
+        .product__button {
+          background-color: #fff;
+          border: none;
+          cursor: pointer;
+          font-size: 1.2rem;
+          padding: 5px 10px;
+          border-radius: 5px;
+
+          &--decrease {
+            background-color: #ffaaaa;
+          }
+
+          &--increase {
+            background-color: #aaffaa;
+          }
+
+          &--reset {
+            background-color: #ff5555;
+            color: white;
+          }
+        }
+
+        .product__quantity {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+      }
+
+      &__total-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #e6ccff;
+
+        &-value {
+          font-weight: bold;
+          color: #5e3737;
+        }
+      }
+    }
+  }
+
+  &__order__details {
+    padding: 10px;
+    background-color: #f9e2e2;
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      p {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1rem;
+
+        h4 {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .cart__button__container {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+
+      .cart__button {
+        background-color: #e6b5b5;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+
+        &--showCart {
+          background-color: #f9d5d5;
+        }
+
+        &#toCheckout {
+          background-color: #ff9999;
+          color: white;
+        }
+      }
+    }
+  }
+}
+*/
+
+
+.order {
+  padding: 10px;
+  background-color: #f5e6ff; // Ljus lila
+
+  &__summary {
+    padding: 10px;
+    background-color: #e6ccff; // Ljus lavendel
+  }
+
+  &__checkout {
+    padding: 10px;
+    background-color: #f5ccff; // Ljus lila-rosa
+
+    &__customerInfo {
+      padding: 10px;
+      background-color: #e0b3ff; // Pastell lila
+    }
+
+    &__payment {
+      padding: 10px;
+      background-color: #f2b3e6; // Rosa pastell
+    }
+
+    &__confirmation {
+      padding: 10px;
+      background-color: #bdd9c8; // Rosa pastell
+    }
+  }
+}
+
+.timer__warning {
+  padding: 10px;
+  background-color: #ffcccc; // Ljus korall
+}
+
+.test{
+  padding: 10px;
+  background-color: #f5e6ff; // Ljus lila
+
+  .font-barriecito {
+    font-family: 'Barriecito', cursive;
+    font-size: 36px;
+  }
+
+  .font-delicious-handrawn {
+    font-family: 'Delicious Handrawn', cursive;
+    font-size: 36px;
+  }
+
+  .font-emilys-candy {
+    font-family: 'Emilys Candy', cursive;
+    font-size: 36px;
+  }
+
+  .font-handlee {
+    font-family: 'Handlee', cursive;
+    font-size: 36px;
+  }
+
+  .font-just-me-again {
+    font-family: 'Just Me Again Down Here', cursive;
+    font-size: 36px;
+  }
+
+  .font-kablammo {
+    font-family: 'Kablammo', cursive;
+    font-size: 36px;
+  }
+
+  .font-mogra {
+    font-family: 'Mogra', cursive;
+    font-size: 36px;
+  }
+
+  .font-rasa {
+    font-family: 'Rasa', serif;
+    font-size: 36px;
+  }
+
+  .font-rubik-dirt {
+    font-family: 'Rubik Dirt', sans-serif;
+    font-size: 36px;
+  }
+
+  .font-rubik-gemstones {
+    font-family: 'Rubik Gemstones', sans-serif;
+    font-size: 36px;
+  }
+}
+
+h1{
+  font-family: 'Rubik Gemstones', sans-serif;
+  font-size: 80px;
+}
+
+.purchase-summary {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+}
+
+.purchase-summary__title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.purchase-summary__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.purchase-summary__item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.purchase-summary__image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+.purchase-summary__details {
+  flex: 1;
+}
+
+.purchase-summary__name {
+  font-size: 1.2rem;
+  margin: 0 0 5px 0;
+}
+
+.purchase-summary__price,
+.purchase-summary__quantity,
+.purchase-summary__total {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.purchase-summary__total-summary {
+  text-align: right;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.purchase-summary__total-summary p {
+  margin: 5px 0;
+  font-size: 1.1rem;
+}
+
+.purchase-summary__total-summary p strong {
+  font-size: 1.3rem;
+  color: #000;
+}
+
+
+img {
+  max-width: 100px;
+  height: auto;
+}

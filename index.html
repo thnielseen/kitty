@@ -4,23 +4,382 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <meta name="author" content="Therese Nielsen">
+  <!-- Grundläggande SEO -->
+<meta name="title" content="Kitty Donut City - De bästa munkarna i stan">
+<meta name="description" content="Beställ utsökta munkar från Kitty Donut City. Vi erbjuder klassiska, fyllda och premium munkar med snabb leverans och bra erbjudanden.">
+<meta name="keywords" content="donuts, munkar, Kitty Donut City, klassiska munkar, fyllda munkar, premium munkar, beställ munkar online">
+<meta name="author" content="Therese Nielsen">
+<meta name="robots" content="index, follow">
 
+<!-- Social Media -->
+<meta property="og:title" content="Kitty Donut City - De bästa munkarna i stan">
+<meta property="og:description" content="Upptäck våra läckra munkar med unika smaker. Fri frakt vid köp av 15 produkter!">
+<meta property="og:image" content="/assets/images/social-preview.jpg">
+<meta property="og:url" content="https://www.kittydonutcity.com">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sv_SE">
 
-  <meta property="og:title" content="">
-  <meta property="og:description" content="">
-  <meta property="og:image" content="">
-  <meta property="og:url" content="">
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kitty Donut City - Beställ online!">
+<meta name="twitter:description" content="Kitty Donut City erbjuder utsökta munkar med fri frakt och exklusiva erbjudanden.">
+<meta name="twitter:image" content="/assets/images/social-preview.jpg">
+
+<!-- Viewport för mobilvänlighet -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
   <title>Kitty donut city</title>
+
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Delicious+Handrawn&family=Emilys+Candy&family=Handlee&family=Just+Me+Again+Down+Here&family=Kablammo&family=Mogra&family=Rasa:ital,wght@0,300..700;1,300..700&family=Rubik+Dirt&family=Rubik+Gemstones&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=add,chevron_left,chevron_right,close,credit_card,delete,remove,request_quote,sell,shopping_cart,sort_by_alpha">
 
 
   <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
+  <div class="content">
+    <section class="fixed__top-content">
+      <article class="banner__container banner__container--static">
+        <h2 class="visually-hidden">Beställningsinformation</h2>
+        <p>💳 Fakturabetalning möjlig upp till 800 kr</p>
+        <p>🚚 Fri frakt vid köp av 15 produkter</p>
+      </article>   
+      <header class="header">
+        <nav>
+          <a href="#top" aria-label="Gå till toppen av sidan">
+            <img src="/assets/design/st,small,507x507-pad,600x600,f8f8f8 (2).png" alt="" aria-label="Tillbaka till början av sidan">
+          </a>
+        </nav>
+        <h1 class="header__title">Kitty donut city</h1>
+        <div class="header__cart">
+          <button class="header__cart-button" id="cartButton" aria-label="Visa kundkorg">
+            <span class="material-symbols-rounded" aria-hidden="true" id="headerCartIcon">shopping_cart</span>
+            <span class="header__cart-amount" id="headerCartAmount" aria-live="polite">0</span>
+          </button>
+        </div>
+      </header>   
+      <article class="banner__container banner__container--rendered">
+        <h2 class="visually-hidden">Leveranstid och rabattinformation</h2>
+        <ul class="banner__item" id="bannerDetails">
+          <li class="banner--delivery-time">Leveranstiden är just nu <span id="deliveryTimeBanner">x</span>.</li>
+          <li class="banner--lucia">🌟 Glad Lucia! En gåva med varje beställning idag.</li>
+          <li class="banner--monday">📅 Måndagsrabatt! 10% på alla produkter före 10:00.</li>
+          <li class="banner--unevenTuesday">🎉 Tisdagsrabatt! 10% på köp över 25 kr - endast idag!</li>
+        </ul>
+      </article>
+    </section>
+  
+    <section class="display" id="display">
+      <h2 class="productDisplay__title">Fritjofs munkar</h2>
+          
+      <nav class="display__controls">
+        <label class="controls__categories">
+          Välj kategori
+          <select class="controls__categories__filter-select" 
+            id="filterCategories">
+            <option value="all" selected>
+              Alla 
+            </option>
+            <option value="classics">
+              Klassiker
+            </option>
+            <option value="favorites">
+              Fyllda favoriter
+            </option>
+            <option value="premium">
+              Premium fyllda
+            </option>
+          </select>
+        </label>
+        <div class="controls__sort-buttons" 
+          id="sort-controls" 
+          role="group" 
+          aria-labelledby="sort-controls">
+          <button class="controls__sort-button" 
+            data-sort="alpha" 
+            aria-label="Sortera i bokstavsordning">
+            <span class="material-symbols-rounded" 
+              aria-hidden="true">
+              sort_by_alpha
+            </span>
+          </button>
+          <button class="controls__sort-button" 
+            data-sort="price" 
+            aria-label="Sortera efter pris">
+            <span class="material-symbols-rounded" 
+              aria-hidden="true">
+              sell
+            </span>
+          </button>
+          <button class="controls__sort-button" 
+            data-sort="rating" 
+            aria-label="Sortera efter betyg">
+            <img class="controls__sort-icon" 
+              aria-hidden="true"
+              src="./assets/design/halfFilledDonut.svg"
+              alt="">
+          </button>
+        </div>
+      </nav>
+      
+      <section class="display">
+        <div class="display__products"  id="productDisplay">
+          <!-- Produkter läggs till här -->
+        </div>
+      </section>
+      
+      
+      
+    </section>
+  
+    <section class="cart" id="cart">
+      <div class="cart__container">
+        <!-- Visa varukorg-knapp -->
+        <div class="cart__button__container">
+          <button class="cart__button-small cart__button--showCart" aria-label="Visa din varukorg">
+            Till varukorgen
+          </button>
+        </div>
+    
+        <!-- Rubrik för kundvagn -->
+        <h2 class="cart__title" id="top">Din varukorg</h2>
+    
+        <!-- Produkter i kundvagn -->
+        <ul class="cart__products" id="cartProducts">
+          <!-- Produkter läggs till här -->
+        </ul>
+    
+        <!-- Töm varukorg-knapp -->
+        <div class="cart__button__container">
+          <button class="cart__button-small cart__button--erase" id="emptyCart" aria-label="Töm varukorgen">
+            Töm varukorgen
+          </button>
+        </div>
+    
+        <!-- Prisdetaljer -->
+        <article class="cart__order__details">
+          <h3>Prisdetaljer</h3>
+          <div class="cart__order__details-container">
+            <p>
+              <h4>Delsumma:</h4> 
+              <span id="cartSubTotal">26</span> kr
+            </p>
+            <p>
+              <h4>Frakt:</h4> 
+              <span id="cartShipping">0</span> kr
+            </p>
+            <p>
+              <h4>Totalt:</h4> <span id="cartTotSum">26</span> kr
+            </p>
+          </div>
+    
+          <!-- Navigeringsknappar -->
+          <div class="cart__button__container">
+            <button class="cart__button cart__button--showCart" aria-label="Visa din varukorg">
+              Fortsättt handla
+            </button>
+            <button class="cart__button" id="toCheckout" aria-label="Gå till kassan">
+              Slutför beställning
+            </button>
+          </div>
+        </article>
+      </div>
+    </section>
+    
+    
+  
+    <section class="order" id="order">
+      <h2>Din beställning</h2>
+      <section class="order__summary">
+        <h3>Beställningsöversikt</h3>
+        <ul class="order-summary__products" id="orderSummary">
+          <!-- Produkter läggs till här -->
+
+        </ul>  
+      </section>
+  
+      <section class="order__checkout" id="checkout">
+        <h2>Betalning</h2>
+        <section class="order__checkout__customerInfo" id="customerForm">
+          <h3>Information</h3>
+          <form class="customer-info__form">
+          
+            <!-- Kontaktuppgifter -->
+            <fieldset>
+              <legend>Kontaktuppgifter</legend>
+              <div class="form__group form__group--row">
+                <label class="form__label">
+                  Förnamn
+                  <input type="text" name="firstName" class="form__input" placeholder="Förnamn" required aria-required="true">
+                  <span class="validation-feedback" aria-live="polite"></span>
+                </label>
+                <label class="form__label">
+                  Efternamn
+                  <input type="text" name="lastName" class="form__input" placeholder="Efternamn" required aria-required="true">
+                  <span class="validation-feedback" aria-live="polite"></span>
+                </label>
+              </div>
+            </fieldset>
+    
+            <!-- Adressuppgifter -->
+            <fieldset>
+              <legend>Adressuppgifter</legend>
+              <div class="form__group">
+                <label class="form__label">
+                  Gatuadress
+                  <input type="text" name="streetAddress" class="form__input" placeholder="Gatuadress" required aria-required="true">
+                  <span class="validation-feedback" aria-live="polite"></span>
+                </label>
+              </div>
+              <div class="form__group form__group--row">
+                <label class="form__label">
+                  Postnummer
+                  <input type="text" name="postalCode" class="form__input" placeholder="Postnummer" pattern="\d{3}\s?\d{2}" required aria-required="true">
+                  <span class="validation-feedback" aria-live="polite"></span>
+                </label>
+                <label class="form__label">
+                  Stad
+                  <input type="text" name="city" class="form__input" placeholder="Stad" required aria-required="true">
+                  <span class="validation-feedback" aria-live="polite"></span>
+                </label>
+              </div>
+            </fieldset>
+    
+            <!-- Kontaktinformation -->
+            <fieldset>
+              <legend>Kontaktinformation</legend>
+              <div class="form__group form__group--row">
+                <label class="form__label">
+                  E-post
+                  <input type="email" name="email" class="form__input" placeholder="example@email.com" required aria-required="true">
+                  <span class="validation-feedback" aria-live="polite"></span>
+                </label>
+                <label class="form__label">
+                  Telefonnummer
+                  <input type="tel" name="phone" class="form__input" placeholder="Telefonnummer" pattern="\+?\d{1,3}?\s?\d{7,}" required aria-required="true">
+                  <span class="validation-feedback" aria-live="polite"></span>
+                </label>
+              </div>
+            </fieldset>
+    
+            <!-- Checkboxar -->
+            <div class="form__group form__group--checkbox">
+              <label class="form__label--checkbox">
+                <input type="checkbox" name="acceptTerms" required aria-required="true">
+                <span>Jag godkänner behandling av mina personuppgifter</span>
+              </label>
+              <label class="form__label--checkbox">
+                <input type="checkbox" name="newsLetter" checked>
+                <span>Jag vill ta del av erat nyhetsbrev</span>
+              </label>
+            </div>
+          </form>
+    
+        </section>
+        <section class="order__checkout__payment" id="payment">
+          <h2>Välj betalningsmetod</h2>
+            <div class="checkout__payment--selector">
+
+              <label>
+                <input type="radio" name="payment" id="invoice" value="invoice" disabled>
+                <span class="material-symbols-rounded" aria-hidden="true">request_quote</span>
+              </label>
+              <label>
+                <input type="radio" name="payment" id="card" value="invoice" disabled>
+                <span class="material-symbols-rounded" aria-hidden="true">credit_card</span>
+              </label>
+            </article>
+            <article class="checkout__payment__card--selected" id="cardPayment">
+              <h2>Kortbetalning</h2>
+              <div>
+                <label>
+                  <span>Kortnummer</span>
+                  <input type="number" id="creditCardNumber" value="5100080000000000">
+                </label>
+              </div>
+              <div>
+                <label class="form__label">
+                  Korthållares namn
+                  <input 
+                    type="text" 
+                    name="nameOnCard" 
+                    class="form__input" 
+                    placeholder="Förnamn Efternamn" 
+                    required 
+                    aria-required="true">
+                  <span class="validation-feedback" aria-live="polite"></span>
+                </label>
+              </div>
+              <div>
+                <label>
+                  <span>Datum</span>
+                  <span>
+                      <input type="number" class="small" placeholder="YY" id="creditCardYear">/<input type="number" class="small" placeholder="MM" id="creditCardMonth">
+                    </span>
+                </label>
+                <label>
+                  <span>CVC</span>
+                  <input type="number" placeholder="123" id="creditCardCvc">
+                </label>
+              </div>
+            </article>
+            <article class="checkout__payment__invocie--selected" id="invoicePayment">
+              <h2>Fakturabetalning</h2>
+              <label>
+                <span>Personnummer</span>
+                <input type="text" name="personal-id" id="personalID" value="19850505-1234">
+              </label>
+            </article>
+        </section>
+        <div>
+          <button>Avbryt</button>
+          <button>Bekräfta</button>
+        </div>
+      </section>
+    
+      <section class="order__confirmation">
+        <h2>Orderbekräftelse</h2>
+        <h3>Tack för din beställning!</h3>
+        <p>Din order är nu bekräftad och kommer att levereras inom <span id="deliveryTime">x</span> dagar.</p>
+      </section>
+    </section>
+  
+    <section class="timer__warning visually-hidden" id="timerWarning" role="alert" aria-live="assertive">
+      <div class="timer__warning-content">
+        <img src="/assets/design/skalman.webp" 
+             alt="Bild på Skalman liggandes på en kudde med sin mat- och sovklocka i handen." 
+             class="timer__warning-image"
+             loading="lazy"
+             width="670"
+             height="648">
+        <h3 class="timer__warning-title">Tiden rinner ut! ⏳</h3>
+        <p class="timer__warning-text">Det verkar som att du har tagit en Skalman-paus. Om du inte gör något snart, kommer din beställning att nollställas.</p>
+        <button class="timer__warning-button">Fortsätt beställa</button>
+      </div>
+    </section>
+  
+
+
+
+<div class="test">
+  <p class="font-barriecito">Detta är en text med fonten Barriecito.</p>
+  <p class="font-delicious-handrawn">Detta är en text med fonten Delicious Handrawn.</p>
+  <p class="font-emilys-candy">Detta är en text med fonten Emilys Candy.</p>
+  <p class="font-handlee">Detta är en text med fonten Handlee.</p>
+  <p class="font-just-me-again">Detta är en text med fonten Just Me Again Down Here.</p>
+  <p class="font-kablammo">Detta är en text med fonten Kablammo.</p>
+  <p class="font-mogra">Detta är en text med fonten Mogra.</p>
+  <p class="font-rasa">Detta är en text med fonten Rasa.</p>
+  <p class="font-rubik-dirt">Detta är en text med fonten Rubik Dirt.</p>
+  <p class="font-rubik-gemstones">Detta är en text med fonten Rubik Gemstones.</p>
+    </div>
+</div>
 
   <script type="module" src="/js/script.mjs"></script>
 </body>
 </html>
+
