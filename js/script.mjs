@@ -41,7 +41,7 @@ const testDonutProducts = [
     4.5,
     "Fylld med len choklad-hasselnötskräm och doppad i jordnötssmör, toppad med extra chokladkräm för en perfekt kombination.",
     23,
-    0, // Test med antal = 0
+    12, // Test med antal = 0
     10
   ),
   new Donut(
