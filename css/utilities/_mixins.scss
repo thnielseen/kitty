@@ -5,9 +5,6 @@ A collection of reusable mixins for the project, including spacing, responsive f
 
 /* Importing existing functions to incorporate them in the declaration of reusable mixins. */
 @use 'functions' as func;
-<<<<<<< HEAD
-@use 'variables' as var;
-=======
 
 /*    ~~~ Mixin for margin- and padding sizes ~~~
 -----------------------------------------------------------
@@ -71,4 +68,3 @@ This mixin hides elements visually but keeps them accessible to screen readers.
     margin: 1rem 0;
   }
   
->>>>>>> gh-pages
